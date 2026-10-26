@@ -1,0 +1,12 @@
+import {
+    std/io
+    go_http.{Request, Response, serve}
+}
+
+fn main() -> Result<Unit, String> {
+    io.eprint("Listening on 8080\n")
+    serve(":8080" , fn req: Request -> {
+      io.eprint("${req.method} ${req.path}\n")
+      #Response{ status: 200, body: req.body}
+    })
+}

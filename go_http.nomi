@@ -1,0 +1,14 @@
+gopkg "github.com/netshade/showmi" as go_http
+
+pub struct Request {
+    method: String
+    path: String
+    body: Bytes
+}
+
+pub struct Response {
+    status: Int
+    body: Bytes
+}
+
+pub fn serve(addr: String, handle: (Request) -> Response) -> Result<Unit, String> go go_http.Serve

@@ -1,0 +1,5 @@
+[module]
+
+name = "showmi"
+
+entry_points = ["main"]
